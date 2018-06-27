@@ -3,8 +3,6 @@ var qlikApp2;
 var qlikApp3;
 var gQlik;
 
-
-
 require.config({
     baseUrl: "https://qlikstage.jefferson.edu/adfss/resources",
     paths: {

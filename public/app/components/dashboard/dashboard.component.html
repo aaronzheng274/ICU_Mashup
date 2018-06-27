@@ -1,11 +1,37 @@
+
+
 <div class="filter-container">
-    <div class="filter" id="department-filter">
+    <div class="dropdown-container">
+        <div class="dropdown-button noselect" ng-click="cf.toggleOpen('department-filter')">
+            <div class="dropdown-label">Department Group</div>
+            <i class="fa fa-filter"></i>
+            </div>
+        <div class="dropdown-list department-filter" style="display: none;">
+            <ul>
+                <li ng-repeat="option in cf.depOptions">
+                    <input name="{{option.name}}" type="checkbox" ng-click="cf.changeSel('Department Group', option)" />
+                    <label for="{{option.name}}">{{option.name}}</label>
+                    </li>
+                </ul>
+            </div>
     </div>
-    <div class="filter" id="monthYear-filter">
+    <div class="dropdown-container">
+        <div class="dropdown-button noselect" ng-click="cf.toggleOpen('year-filter')">
+            <div class="dropdown-label">Month/Year</div>
+            <i class="fa fa-filter"></i>
+            </div>
+        <div class="dropdown-list year-filter" style="display: none;">
+            <ul>
+                <li ng-repeat="option in cf.yearOptions">
+                    <input name="{{option.name}}" type="checkbox" ng-click="cf.changeSel('MonthYear', option)" />
+                    <label for="{{option.name}}">{{option.name}}</label>
+                    </li>
+                </ul>
+            </div>
     </div>
 </div>
 <div class="kpi-container">
-    <div class="kpi" id="daliy-admissions">
+    <div class="kpi" id="daily-admissions">
     </div>
     <div class="kpi" id="icu-mortalities">
     </div>
@@ -16,7 +42,7 @@
     <div class="kpi" id="readmissions">
     </div>
     <div class="kpi" id="unplanned">
-    </div> 
+    </div>
     <div class="kpi" id="central-line">
     </div>
 </div>

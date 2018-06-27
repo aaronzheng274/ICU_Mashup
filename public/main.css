@@ -39,7 +39,7 @@ font-face {
   background: -o-linear-gradient(left, #ffffff 0%, #4477aa 100%);
   background: -ms-linear-gradient(left, #ffffff 0%, #4477aa 100%);
   background: linear-gradient(to right, #ffffff 0%, #4477aa 100%);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  
 }
 
 .topnav a {
@@ -137,16 +137,15 @@ font-face {
 }
 
 .dropdown-list {
+  display: none;
   position: absolute;
   top: 40px;
   /* float: left; */
   width: 100%;
   border: 1px solid lightgray;
-  border-top: none;
   box-sizing: border-box;
-  padding: 10px 12px;
   z-index: 2;
-  background-color: white
+  background-color: white;
 }
 
 .dropdown-list input[type="search"] {
@@ -157,10 +156,75 @@ font-face {
   margin: 10px 0;
   max-height: 200px;
   overflow-y: auto;
-  
+  border: 1px;
+}
+
+ul li {
+  border: 1px black;
 }
 
 .dropdown-list ul input[type="checkbox"] {
   position: relative;
   top: 2px;
+  border: 1px;
+}
+
+.dropdown-container:hover .dropdown-button:hover .dropdown-list department-filter {
+  display: block;
+}
+
+.selections {
+  height: 50px;
+  width: 100%;
+}
+
+.qv-selections-pager {
+  pointer-events: none
+}
+
+/* Current Selecitons bar */
+
+.qv-selections-pager>.buttons {
+  display: none;
+}
+
+.qv-selections-pager>.buttons-end {
+  display: none;
+}
+
+.wrap {
+  background-color: #4477aa;
+  background: -moz-linear-gradient(left, #ffffff 0%, #4477aa 100%);
+  background: -webkit-linear-gradient(left, #ffffff 0%, #4477aa 100%);
+  background: -o-linear-gradient(left, #ffffff 0%, #4477aa 100%);
+  background: -ms-linear-gradient(left, #ffffff 0%, #4477aa 100%);
+  background: linear-gradient(to right, #ffffff 0%, #4477aa 100%);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.text-wrap>.name {
+  color: black;
+}
+
+.text-wrap>.values {
+  color: black;
+}
+
+.options {
+  display: none
+}
+
+.S {
+  background-color: green;
+  color: white;
+}
+
+.O {
+  background-color: white;
+  color: black;
+}
+
+.X {
+  background-color: rgb(221, 220, 220);
+  color: black;
 }

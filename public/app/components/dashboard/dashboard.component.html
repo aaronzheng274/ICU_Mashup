@@ -1,4 +1,6 @@
+<div id="CurrentSelections" class='selections'>
 
+</div>
 
 <div class="filter-container">
     <div class="dropdown-container">
@@ -6,11 +8,11 @@
             <div class="dropdown-label">Department Group</div>
             <i class="fa fa-filter"></i>
             </div>
-        <div class="dropdown-list department-filter" style="display: none;">
+        <div class="dropdown-list department-filter">
             <ul>
                 <li ng-repeat="option in cf.depOptions">
-                    <input name="{{option.name}}" type="checkbox" ng-click="cf.changeSel('Department Group', option)" />
-                    <label for="{{option.name}}">{{option.name}}</label>
+                    <div name="{{option.name}}" class="{{option.state}}"ng-click="cf.changeSel('Department Group', option)">{{option.name}}</div>
+                   
                     </li>
                 </ul>
             </div>
@@ -23,8 +25,7 @@
         <div class="dropdown-list year-filter" style="display: none;">
             <ul>
                 <li ng-repeat="option in cf.yearOptions">
-                    <input name="{{option.name}}" type="checkbox" ng-click="cf.changeSel('MonthYear', option)" />
-                    <label for="{{option.name}}">{{option.name}}</label>
+                    <div name="{{option.name}}" class="{{option.state}}"ng-click="cf.changeSel('MonthYear', option)">{{option.name}}</div>
                     </li>
                 </ul>
             </div>

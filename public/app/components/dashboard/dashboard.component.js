@@ -11,17 +11,27 @@ define( 'dashboard',function () {
            
             function init() {
                 // objects from app1
-                qlikApp.getObject('monthYear-filter', 'gjqBtfF');
-                qlikApp.getObject('readmissions','FyQYt');
-	            qlikApp.getObject('patient-hyp','VFrv');
-	            qlikApp.getObject('icu-mortalities','XTrp');
-                qlikApp.getObject('daily-admissions','jNKpm');
+                qlikApp.clearAll().then(function(a){
+                    qlikApp.getObject('monthYear-filter', 'gjqBtfF');
+                    qlikApp.getObject('readmissions','FyQYt');
+                    qlikApp.getObject('patient-hyp','VFrv');
+                    qlikApp.getObject('icu-mortalities','XTrp');
+                    qlikApp.getObject('daily-admissions','jNKpm');
+                    qlikApp.getObject('CurrentSelections', 'CurrentSelections');
+                })
+ 
                 
                 // app 3
-                qlikApp3.getObject('central-line','jzGncQ');
+                qlikApp3.clearAll().then(function(a){
+                    qlikApp3.getObject('central-line','jzGncQ');
+                })
+              
     
                 // app2
-                qlikApp2.getObject('unplanned','DwaDNk');
+                qlikApp2.clearAll().then(function(a){
+                    qlikApp2.getObject('unplanned','DwaDNk');
+                })
+
 
                 // init create list
                 qlikApp.createList({
@@ -64,26 +74,26 @@ define( 'dashboard',function () {
                     
                 function parseDepList(sel){
                     console.log(sel)
-                    qlikApp.destroySessionObject(sel.qInfo.qId);
+                   
                     let list = sel.qListObject.qDataPages[0].qMatrix;
                     let depOptions = []
                     console.log(list)
                     list.forEach(function(opt){
                         console.log(opt)
-                        depOptions.push({name:opt[0].qText})
+                        depOptions.push({name:opt[0].qText, state: opt[0].qState})
                     })
                     vm.depOptions = depOptions
                 }
 
                 function parseYearList(sel){
                     console.log(sel)
-                    qlikApp.destroySessionObject(sel.qInfo.qId);
+                   
                     let list = sel.qListObject.qDataPages[0].qMatrix;
                     let yearOptions = []
                     console.log(list)
                     list.forEach(function(opt){
                         console.log(opt)
-                        yearOptions.push({name:opt[0].qText, num: opt[0].qNum})
+                        yearOptions.push({name:opt[0].qText, num: opt[0].qNum, state: opt[0].qState})
                     })
                     vm.yearOptions = yearOptions
                 }

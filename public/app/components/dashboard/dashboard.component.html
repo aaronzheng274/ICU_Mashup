@@ -4,7 +4,7 @@
 
 <div class="filter-container">
     <div class="dropdown-container">
-        <div class="dropdown-button noselect" ng-click="cf.toggleOpen('department-filter')">
+        <div class="dropdown-button noselect semi-square">
             <div class="dropdown-label">Department Group</div>
             <i class="fa fa-filter"></i>
             </div>
@@ -18,11 +18,11 @@
             </div>
     </div>
     <div class="dropdown-container">
-        <div class="dropdown-button noselect" ng-click="cf.toggleOpen('year-filter')">
+        <div class="dropdown-button noselect semi-square" >
             <div class="dropdown-label">Month/Year</div>
             <i class="fa fa-filter"></i>
             </div>
-        <div class="dropdown-list year-filter" style="display: none;">
+        <div class="dropdown-list year-filter">
             <ul>
                 <li ng-repeat="option in cf.yearOptions">
                     <div name="{{option.name}}" class="{{option.state}}"ng-click="cf.changeSel('MonthYear', option)">{{option.name}}</div>

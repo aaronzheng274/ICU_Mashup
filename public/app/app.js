@@ -4,7 +4,7 @@ var qlikApp3;
 var gQlik;
 
 require.config({
-    baseUrl: "https://qlikstage.jefferson.edu/adfss/resources",
+    baseUrl: "https://qlikdev.jefferson.edu/adfsd/resources",
     paths: {
         "angularRoute": "https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.18/angular-ui-router.min"
     }
@@ -16,8 +16,8 @@ require(["js/qlik"], function (qlik) {
     require(["angular", 'angularRoute', "routes", 'dataService', 'navBar','footer','dashboard'],
         function (angular, uiRoute, routes, dataService, navBar, footer, dashboard) {
             let config = {
-                host: 'qlikstage.jefferson.edu',
-                prefix: '/adfss/',
+                host: 'qlikdev.jefferson.edu',
+                prefix: '/adfsd/',
                 port: '443',
                 isSecure: true
             };

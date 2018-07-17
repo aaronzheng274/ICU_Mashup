@@ -13,8 +13,8 @@ define( 'dashboard',function () {
                 // objects from app1
                 qlikApp.clearAll().then(function(a){
                     qlikApp.getObject('monthYear-filter', 'gjqBtfF');
-                    qlikApp.getObject('readmissions','FyQYt');
-                    qlikApp.getObject('patient-hyp','VFrv');
+                    qlikApp.getObject('readmissions','NxkJJQk');
+                    qlikApp.getObject('patient-hyp','nTwHy');
                     qlikApp.getObject('icu-mortalities','XTrp');
                     qlikApp.getObject('daily-admissions','jNKpm');
                     qlikApp.getObject('CurrentSelections', 'CurrentSelections');
@@ -45,16 +45,17 @@ define( 'dashboard',function () {
                     },parseDepList)
 
                     // init create list
-                    qlikApp.createList({
-                        "qDef": {"qFieldDefs": ["MonthYear"]},
-                            "qInitialDataFetch": [{
-                                qTop : 0,
-                                qLeft : 0,
-                                qHeight : 100,
-                                qWidth : 1
-                            }]
-                        },parseYearList)
+                qlikApp.createList({
+                    "qDef": {"qFieldDefs": ["MonthYear"]},
+                        "qInitialDataFetch": [{
+                            qTop : 0,
+                            qLeft : 0,
+                            qHeight : 100,
+                            qWidth : 1
+                        }]
+                    },parseYearList)
                 }
+                
                 function changeSel(field, val){
                     console.log(field,' ', val)
                     let sel;
@@ -97,6 +98,14 @@ define( 'dashboard',function () {
                     })
                     vm.yearOptions = yearOptions
                 }
+
+                $("#ClearAll").click(function() {
+
+                    qlikApp.clearAll();
+                    qlikApp2.clearAll();
+                    qlikApp3.clearAll();
+                    
+                          });
         }
         return {
             bindings: {},

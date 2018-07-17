@@ -84,13 +84,13 @@ font-face {
 
 .kpi-container {
   display: flex;
-  justify-content: center
+  justify-content: center;
 }
 
 .kpi {
   height: 200px;
   width: 350px;
-  margin: 50px;
+  margin: 75px;
 }
 
 .noselect {
@@ -135,6 +135,10 @@ font-face {
 }
 
 .dropdown-button .fa-filter {
+  float: right;
+}
+
+.dropdown-button .fa-refresh {
   float: right;
 }
 
@@ -193,7 +197,7 @@ ul li {
   pointer-events: none
 }
 
-/* Current Selecitons bar */
+/* Current Selections bar */
 
 .qv-selections-pager>.buttons {
   display: none;

@@ -1,16 +1,21 @@
+<!-- HTML layout of the ICU mashup webpage. -->
 <div id="CurrentSelections" class='selections'>
 
 </div>
 
+<!-- Div class filter-container includes the filter buttons Department Group, Month-Year, and Clear. -->
 <div class="filter-container">
     <div class="dropdown-container">
         <div class="dropdown-button noselect semi-square">
             <div class="dropdown-label">Department Group</div>
+            <!-- Filter icon from the Font Awesome toolkit. -->
             <i class="fa fa-filter"></i>
             </div>
         <div class="dropdown-list department-filter">
             <ul>
+                <!-- Populates the filter dropdown with department group options. -->
                 <li ng-repeat="option in cf.depOptions">
+                    <!-- Sets the name of the filters, and calls the changeSel function when an option is clicked. -->
                     <div name="{{option.name}}" class="{{option.state}}"ng-click="cf.changeSel('Department Group', option)">{{option.name}}</div>
                    
                     </li>
@@ -20,23 +25,28 @@
     <div class="dropdown-container">
         <div class="dropdown-button noselect semi-square" >
             <div class="dropdown-label">Month-Year</div>
+            <!-- Filter icon from the Font Awesome toolkit. -->
             <i class="fa fa-filter"></i>
             </div>
         <div class="dropdown-list year-filter">
             <ul>
                 <li ng-repeat="option in cf.yearOptions">
+                    <!-- Month-Year filters and calls changeSel with MonthYear with each click. -->
                     <div name="{{option.name}}" class="{{option.state}}"ng-click="cf.changeSel('MonthYear', option)">{{option.name}}</div>
                     </li>
                 </ul>
             </div>
     </div>
     <div class="dropdown-container">
+        <!-- Clear button. -->
         <div class="dropdown-button noselect semi-square" id="ClearAll">
             <div class="dropdown-label">Clear</div>
+            <!--  Refresh icon from the Font Awesome toolkit. -->
             <i class="fa fa-refresh"></i>
         </div>
     </div>   
 </div>
+<!-- Container displaying the 6 KPIs. -->
 <div class="kpi-container">
     <div class="kpi" id="daily-admissions">
     </div>

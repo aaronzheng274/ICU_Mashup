@@ -1,3 +1,4 @@
+// qlikService is not used
 define('qlikService', function () {
     function qlikService() {
 

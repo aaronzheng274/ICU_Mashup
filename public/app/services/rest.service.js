@@ -1,3 +1,4 @@
+// rest service is not used
 define('restService', function () {
     function qlikService() {
 

@@ -1,3 +1,4 @@
+// no additional functionality of the navbar beside the html component currently
 define( 'navBar',function () {
     
         function navBar() {

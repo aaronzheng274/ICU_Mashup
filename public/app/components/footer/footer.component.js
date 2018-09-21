@@ -1,3 +1,4 @@
+// footer section not utilized, feel free to be creative 
 define( 'footer',function () {
     
         function footerComponent() {

@@ -1,3 +1,4 @@
+// captures the data from the service and assigns it to val
 define( 'dataService',function () {
      
     

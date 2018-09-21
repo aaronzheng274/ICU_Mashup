@@ -1,3 +1,4 @@
+// determines the flow the the site, not much here since it's a single page application
 define('routes',function(){
     
     function routeConfig($locationProvider, $stateProvider, $urlRouterProvider){
